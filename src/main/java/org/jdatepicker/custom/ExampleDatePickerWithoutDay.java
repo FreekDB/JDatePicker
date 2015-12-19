@@ -21,11 +21,13 @@ public class ExampleDatePickerWithoutDay {
 
         // Set two date formats and a text label.
         DateFormat dateFormat = new SimpleDateFormat("MMMM yyyy");
-        ComponentFormatDefaults.Key formatKey = ComponentFormatDefaults.Key.SELECTED_DATE_FIELD;
+        ComponentFormatDefaults.Key formatKey;
+        formatKey = ComponentFormatDefaults.Key.SELECTED_DATE_FIELD;
         ComponentFormatDefaults.getInstance().setFormat(formatKey, dateFormat);
         formatKey = ComponentFormatDefaults.Key.TODAY_SELECTOR;
         ComponentFormatDefaults.getInstance().setFormat(formatKey, dateFormat);
-        ComponentTextDefaults.getInstance().setText(ComponentTextDefaults.Key.TODAY, "Current month");
+        ComponentTextDefaults.Key textKey = ComponentTextDefaults.Key.TODAY;
+        ComponentTextDefaults.getInstance().setText(textKey, "Current month");
 
         // Create the date picker.
         UtilCalendarModel calendarModel = new UtilCalendarModel();
